@@ -1,0 +1,189 @@
+/*2. WAP to Check if a Number is Positive or Negative*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    if(n>0){
+        cout<<"positive";
+    }
+    else{
+        cout<<"negative";
+    }
+}
+
+
+/*3. WAP to Find Factorial of a number*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, fact=1;
+    cin>>n;
+    if(n==0||n==1){
+        cout<<n;
+    }
+    else{
+        for(int i=1; i<=n; i++){
+            fact=fact*i;
+        }
+        cout<<fact;
+    }
+}
+
+
+/*4. WAP to Display Fibonacci series*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, sum=0, a=0, b=1;
+    cin>>n;
+    for (int i = 1; i <= n; ++i) {
+        cout<<a<<" ";
+        sum = a + b;
+        a = b;
+        b = sum;
+    }
+}
+
+
+/*5. WAP to Display Fibonacci series up to a given
+number (instead of terms)
+Input: 20
+Output:0 + 1 + 1 + 2 + 3 + 5 + 8 + 13
+*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, sum=0, a=0, b=1;
+    cin>>n;
+    for (int i = 1; a <= n; ++i) {
+        cout<<a<<" ";
+        sum = a + b;
+        a = b;
+        b = sum;
+    }
+}
+
+
+/*6. WAP to Display Uppercased A to Z*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n=65;
+    for(int n=65; n<=90; n++){
+        cout<<(char)n<<" ";
+    }
+}
+
+
+/*7. WAP to Swap two numbers using temporary variable*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a=20, b=10, temp;
+    temp=a;
+    a=b;
+    b=temp;
+    cout<<"a "<<a<<endl;
+    cout<<"b "<<b;
+
+}
+
+/*8. WAP to Swap two numbers without using temporary
+variable*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a=10, b=20;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    cout<<"a "<<a<<endl;
+    cout<<"b "<<b;
+
+}
+
+
+/*9. WAP to Check whether an alphabet is vowel or
+consonant*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    char ch;
+    cin>>ch;
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+        cout<<"vowel";
+    }else{
+        cout<<"consonant";
+    }
+}
+
+
+/*10. WAP to Find the largest number among the given
+numbers*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a=10, b=20, c=50, d=30, e=25;
+    int max=a;
+    if(b>max){
+        max=b;
+    }
+    if(c>max){
+        max=c;
+    }
+    if(d>max){
+        max=d;
+    }
+    if(e>max){
+        max=e;
+    }
+    cout<<max;
+}
+
+
+/*11. WAP to Reverse a Number*/
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, rev=0, a;
+    cin>>n;
+    while(n!=0){
+        a=n%10;
+        rev=rev*10+a;
+        n=n/10;
+    }
+    cout<<rev;
+}
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n,rev=0,a,b;
+    cin>>n;
+    b=n;
+    while(n!=0){
+        a=n%10;
+        rev=rev*10+a;
+        n=n/10;
+    }
+    if(rev==b){
+        cout<<"Palindrome";
+    }
+    else{
+        cout<<"Not Palindrome";
+    }
+}
