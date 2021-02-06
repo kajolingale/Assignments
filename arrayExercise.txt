@@ -1,0 +1,165 @@
+/*Question 1 : Given an array (or string), the task is to reverse the array/string.
+Examples : Input : arr[] = {4, 5, 1, 2}
+Output : arr[] = {2, 1, 5, 4}*/
+package Array;
+
+import java.util.Scanner;
+
+public class Array1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int arr[]=new int[5];
+		for(int i=0; i<arr.length; i++){
+			arr[i]=sc.nextInt();
+		}
+		for(int i=arr.length-1; i>=0; i--) {
+			System.out.println(arr[i]+" ");
+		}
+	}
+
+}
+
+
+/*Question 2: Write a function to return minimum and maximum in an array.
+Your program should make the minimum number of comparisons.
+*/
+package Array;
+
+import java.util.Scanner;
+
+public class Array2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int arr[]=new int[5];
+		for(int i=0; i<arr.length; i++){
+			arr[i]=sc.nextInt();
+		}
+		int max=0, min=0;
+		for(int i=0; i<arr.length; i++) {
+			if(arr[min]>arr[i]) {
+				min=i;
+			}
+			else if(arr[i]>arr[max]) {
+				max=i;
+			}else {}
+		}
+		System.out.println("Max no=="+arr[max]);
+		System.out.println("Min no=="+arr[min]);
+	}
+
+}
+
+
+/*Question 3: Given an array arr[] and a number K where K is smaller than size
+of array, the task is to find the Kth smallest element in the given array. It is
+given that all array elements are distinct.
+*/
+package Array;
+
+import java.util.Scanner;
+
+public class Array3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {10, 9, 11, 6, 15, 2};
+		int n=arr.length-1;
+		int i=0;
+		while(n>=0) {
+			for(int j=i+1; j<=n; j++) {
+				if(arr[i]<arr[j]) {
+					int temp=arr[j];
+					arr[j]=arr[i];
+					arr[i]=temp;
+					i++;
+				}else if(arr[i]>=arr[j]) {
+					i++;
+				}else {}
+			}
+			n=n-1;
+			i=0;
+		}
+		int k;
+		Scanner sc=new Scanner(System.in);
+		k=sc.nextInt();
+		System.out.println(arr[arr.length-k]);
+	}
+
+}
+
+
+/*Question 4. Given an array of size N containing only 0s, 1s, and 2s; sort the
+array in ascending order.*/
+package Array;
+
+public class Array4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {0, 2, 1, 2, 0};
+		int n=arr.length-1;
+		int i=0;
+		while(n>=0) {
+			for(int j=i+1; j<=n; j++) {
+				if(arr[i]<arr[j]) {
+					int temp=arr[j];
+					arr[j]=arr[i];
+					arr[i]=temp;
+					i++;
+				}else if(arr[i]>=arr[j]) {
+					i++;
+				}else {}
+			}
+			n=n-1;
+			i=0;
+		}
+		n=arr.length-1;
+		for(int j=n; j>=0; j--) {
+			System.out.print(arr[j]+" ");
+		}
+	}
+
+}
+
+
+/*Question 5. Move all negative numbers to beginning and positive to end with
+constant extra space
+An array contains both positive and negative numbers in random order.
+Rearrange the array elements so that all negative numbers appear before all
+positive numbers. Examples :
+Input: -12, 11, -13, -5, 6, -7, 5, -3, -6
+Output: -12 -13 -5 -7 -3 -6 11 6 5
+*/
+package Array;
+
+import java.util.Arrays;
+
+public class Array5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {-12, 11, -13, -5, 6, -7, 5, -3, -6};
+		int arr1[] = {1, 2, 3, 4, 5, 6};
+	    int arr2[] = {1, 2, 3};
+	    int k=0, l=0;
+		
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]<0) {
+				arr1[k]=arr[i];
+				k++;
+			}else {
+				arr2[l]=arr[i];
+				l++;
+			}
+		}
+		int[] arr3=new int[arr.length];
+		System.arraycopy(arr1, 0, arr3, 0, arr1.length);
+        System.arraycopy(arr2, 0, arr3, arr1.length, arr2.length);
+        System.out.println(Arrays.toString(arr3));
+	}
+
+}
