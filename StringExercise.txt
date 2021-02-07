@@ -12,39 +12,31 @@ public class String1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);
-		String s=sc.next();
-		String s1=s;
-		String res="";
-		int max=0, count=0;
-		char maxOccurechar = 0;
-		for(int k=0; k<=s.length()-1; k++) {
-			int c = 0;
-			for(int j=0; j<=s1.length()-1; j++){
-				if(s.charAt(k)==s1.charAt(j)) {
-					c=1;
-				}else{
-				}
-				//System.out.println(c);
-			}
-			if(c==1 && res.indexOf(s.charAt(k))==-1){
-				res=res+s.charAt(k);
-			}
-		}
-		
-		for(int i=0; i<res.length(); i++) {
-			for(int j=0; j<s.length(); j++) {
-				if(res.charAt(i)==s.charAt(j)) {
-					count++;
-				}
-			}
-			if(count>max) {
-				max=count;
-				maxOccurechar=res.charAt(i);
-			}
-			count=0;
-		}
-		System.out.println(maxOccurechar);
+		 Scanner sc=new Scanner(System.in);
+                String str=sc.nextLine();
+ char arr[] = str.toCharArray(); 
+ //char aa[]=new char[arr.length];
+ Arrays.sort(arr); 
+ //int count=0;
+ int i=0, count=0, max=0;
+ char maxch='c';
+while(i<arr.length)
+{
+char c=arr[i];
+//System.out.print(c);
+while(i<arr.length && arr[i]==c)
+{
+    count++;
+i++;}
+if(count>max){
+    max=count;
+    maxch=c;
+}
+
+//System.out.println("");
+count=0;
+}
+System.out.print(maxch);
 	}
 
 }
